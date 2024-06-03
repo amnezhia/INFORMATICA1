@@ -17,7 +17,7 @@ int main(){
 
 void AzzeraArray(int v[]) {
     for(int i=0; i<N; i++){
-		printf("%d", v[i]);
+		v[i] = 0;
 	}
 }
 
