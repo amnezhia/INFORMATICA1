@@ -1,5 +1,13 @@
 #include <stdio.h>
 
+#define N 10
+
+
+void AzzeraArray(int v[]);
+void StampaArray(int v[]);
+void CaricaOrdinato(int v[]);
+void ShiftDestra(int v[], int scambio, int NumeriInseriti);
+
 int main(){
 	int v[5];
     AzzeraArray(v);
@@ -7,22 +15,22 @@ int main(){
 	StampaArray(v);
 }
 
-AzzeraArray(int v[]){
+void AzzeraArray(int v[]) {
     for(int i=0; i<N; i++){
 		printf("%d", v[i]);
 	}
 }
 
-StampaArray(int v[]){
+void StampaArray(int v[]){
 	for(int i=0; i<N; i++){
 		printf("%d", v[i]);
 	}
 }
 
-CaricaOrdinato(int v[]){
+void CaricaOrdinato(int v[]){
 
     int i, num, j, NumeriInseriti=0;
-    scnaf("%d", &num)
+    scanf("%d", &num);
     v[0] = num;
 
     for(i=1; i<N; i++){
@@ -38,6 +46,6 @@ CaricaOrdinato(int v[]){
     }
 }
 
-ShiftDestra(int v, int scambio, int NumeriInseriti ){
-    for(int i=)
+void ShiftDestra(int v[], int scambio, int NumeriInseriti){
+   // for(int i=)
 }
