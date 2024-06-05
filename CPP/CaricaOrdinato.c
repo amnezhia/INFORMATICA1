@@ -1,12 +1,12 @@
 #include <stdio.h>
 
-#define N 10
+#define N 5
 
 
 void AzzeraArray(int v[]);
 void StampaArray(int v[]);
 void CaricaOrdinato(int v[]);
-void ShiftDestra(int v[], int scambio, int NumeriInseriti);
+void shift(int v[], int pos, int Nnumeri);
 
 int main(){
 	int v[5];
@@ -23,29 +23,35 @@ void AzzeraArray(int v[]) {
 
 void StampaArray(int v[]){
 	for(int i=0; i<N; i++){
-		printf("%d", v[i]);
+		printf("%d\t", v[i]);
 	}
 }
 
 void CaricaOrdinato(int v[]){
+    int num, pos;
+    scanf("%d", &v[0]);
 
-    int i, num, j, NumeriInseriti=0;
-    scanf("%d", &num);
-    v[0] = num;
-
-    for(i=1; i<N; i++){
+    for (int i = 1; i < N; i++){
         scanf("%d", &num);
-        NumeriInseriti++;
-        for(j=0; j<N; j++){
-            if(num<v[j]){
-                ShiftDestra(v, j, NumeriInseriti);
-            }else{
-                v[j+1] = num;
+        
+        pos = i;
+        
+        for (int j = i-1; j>=0; j--){
+            if (num < v[j]){
+            	pos = j;
             }
         }
+        
+        if(pos !=i){
+        	shift(v, pos, i);
+		}
+		
+		v[pos] = num;
     }
 }
 
-void ShiftDestra(int v[], int scambio, int NumeriInseriti){
-   // for(int i=)
+void shift(int v[], int pos, int Nnumeri) {
+    for (int i = Nnumeri; i > pos; i--) {
+        v[i] = v[i - 1];
+    }
 }
